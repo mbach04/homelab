@@ -13,7 +13,7 @@ data:
   FORCE_GAMEMODE: "true"
   MOTD: A Paper Minecraft Server for Ike
   PLAYER_IDLE_TIMEOUT: "0"
-  OPS: d4c0bbfe-1c14-4c4b-ad8d-019c9d87d3d8
+  OPS: d5a54854-63d8-474c-a730-6f8e3c3c40cb
   SPIGET_RESOURCES: "274"
   RCON_CMDS_STARTUP: |
     gamerule keepInventory true
