@@ -1,0 +1,85 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cfgmap-mc2
+  namespace: minecraft-m2
+data:
+  EULA: "TRUE"
+  TYPE: PAPER
+  MEMORY: 8G
+  MODE: survival
+  PVP: "false"
+  FORCE_GAMEMODE: "true"
+  MOTD: A Paper Minecraft Server for Ike
+  PLAYER_IDLE_TIMEOUT: "0"
+  OPS: 1264a1a5-8ac1-4d89-b9ad-064bebd66be4 
+  SPIGET_RESOURCES: "274"
+  RCON_CMDS_STARTUP: |
+    gamerule keepInventory true
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mc-vanilla2
+spec:
+  type: NodePort
+  ports:
+  - port: 25565
+    nodePort: 30002
+  selector:
+    app: mc-vanilla2
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: mc-data2
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 15Gi
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mc-vanilla2
+spec:
+  selector:
+    matchLabels:
+      app: mc-vanilla2
+  template:
+    metadata:
+      labels:
+        app: mc-vanilla2
+    spec:
+      containers:
+      - image: itzg/minecraft-server
+        name: mc-vanilla2
+        envFrom:
+        - configMapRef:
+            name: cfgmap-mc2
+        volumeMounts:
+          - mountPath: /data
+            name: data
+        ports:
+        - containerPort: 25565
+          name: main
+        readinessProbe:
+          exec:
+            command: [ "/usr/local/bin/mc-monitor", "status", "--host", "localhost" ]
+          # Give it i + p * f seconds to be ready, so 120 seconds
+          initialDelaySeconds: 20
+          periodSeconds: 5
+          failureThreshold: 20
+        # Monitor ongoing liveness
+        livenessProbe:
+          exec:
+            command: ["/usr/local/bin/mc-monitor", "status", "--host", "localhost"]
+          initialDelaySeconds: 120
+          periodSeconds: 60
+      volumes:
+      - name: data
+        persistentVolumeClaim:
+          claimName: mc-data2
