@@ -1,0 +1,14 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: mc-dynmap
+  namespace: minecraft
+spec:
+  ports:
+    - protocol: TCP
+      port: 8123
+      targetPort: 8123
+      nodePort: 30001
+  type: NodePort
+  selector:
+    app: mc-vanilla

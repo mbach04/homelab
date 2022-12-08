@@ -46,6 +46,9 @@ spec:
         - containerPort: 25565
           name: main
           hostPort: 25565
+        - containerPort: 8080
+          hostPort: 8080
+          name: metrics
         readinessProbe:
           exec:
             command: [ "/usr/local/bin/mc-monitor", "status", "--host", "localhost" ]

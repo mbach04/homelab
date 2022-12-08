@@ -1,40 +1,22 @@
-[03:24:51] [ServerMain/INFO]: Building unoptimized datafixer
-[03:24:51] [ServerMain/INFO]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
-[03:24:52] [ServerMain/INFO]: Loaded 7 recipes
-[03:24:52] [ServerMain/INFO]: Loaded 1179 advancements
-[03:24:52] [Server thread/INFO]: Starting minecraft server version 1.19.2
-[03:24:52] [Server thread/INFO]: Loading properties
-[03:24:52] [Server thread/INFO]: Default game type: SURVIVAL
-[03:24:52] [Server thread/INFO]: Generating keypair
-[03:24:52] [Server thread/INFO]: Starting Minecraft server on *:25565
-[03:24:52] [Server thread/INFO]: Using epoll channel type
-[03:24:52] [Server thread/INFO]: Preparing level "world"
-[03:24:52] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
-[03:24:54] [Worker-Main-7/INFO]: Preparing spawn area: 0%
-[03:24:54] [Worker-Main-7/INFO]: Preparing spawn area: 0%
-[03:24:54] [Worker-Main-7/INFO]: Preparing spawn area: 0%
-[03:24:54] [Worker-Main-5/INFO]: Preparing spawn area: 0%
-[03:24:54] [Server thread/INFO]: Time elapsed: 1849 ms
-[03:24:54] [Server thread/INFO]: Done (1.957s)! For help, type "help"
-[03:24:54] [Server thread/INFO]: Starting remote control listener
-[03:24:54] [Server thread/INFO]: Thread RCON Listener started
-[03:24:54] [Server thread/INFO]: RCON running on 0.0.0.0:25575
-[03:25:16] [User Authenticator #1/INFO]: UUID of player RiCkAsTleYy is d5a54854-63d8-474c-a730-6f8e3c3c40cb
-[03:25:16] [Server thread/INFO]: RiCkAsTleYy[/10.0.2.100:34518] logged in with entity id 226 at (-7.5, 65.0, 42.5)
-[03:25:16] [Server thread/INFO]: RiCkAsTleYy joined the game
-[03:25:39] [Server thread/INFO]: RiCkAsTleYy lost connection: Disconnected
-[03:25:39] [Server thread/INFO]: RiCkAsTleYy left the game
-[03:25:58] [RCON Listener #1/INFO]: Thread RCON Client /0:0:0:0:0:0:0:1 started
-[03:25:58] [Server thread/INFO]: [Rcon: Stopping the server]
-[03:25:58] [RCON Client /0:0:0:0:0:0:0:1 #2/INFO]: Thread RCON Client /0:0:0:0:0:0:0:1 shutting down
-[03:25:58] [Server thread/INFO]: Stopping server
-[03:25:58] [Server thread/INFO]: Saving players
-[03:25:58] [Server thread/INFO]: Saving worlds
-[03:25:58] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
-[03:26:05] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_end
-[03:26:05] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_nether
-[03:26:05] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
-[03:26:05] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
-[03:26:05] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
-[03:26:05] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved
-[03:26:05] [Server thread/INFO]: Thread RCON Listener stopped
+[06:18:00] [ServerMain/INFO]: Building unoptimized datafixer
+[06:18:01] [ServerMain/INFO]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
+[06:18:01] [ServerMain/INFO]: Loaded 7 recipes
+[06:18:02] [ServerMain/INFO]: Loaded 1179 advancements
+[06:18:02] [Server thread/INFO]: Starting minecraft server version 1.19.3
+[06:18:02] [Server thread/INFO]: Loading properties
+[06:18:02] [Server thread/INFO]: Default game type: SURVIVAL
+[06:18:02] [Server thread/INFO]: Generating keypair
+[06:18:02] [Server thread/INFO]: Starting Minecraft server on *:25565
+[06:18:02] [Server thread/INFO]: Using epoll channel type
+[06:18:02] [Server thread/INFO]: Preparing level "world"
+[06:18:03] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
+[06:18:04] [Worker-Main-1/INFO]: Preparing spawn area: 0%
+[06:18:04] [Worker-Main-1/INFO]: Preparing spawn area: 0%
+[06:18:04] [Worker-Main-3/INFO]: Preparing spawn area: 0%
+[06:18:04] [Worker-Main-2/INFO]: Preparing spawn area: 0%
+[06:18:05] [Worker-Main-6/INFO]: Preparing spawn area: 82%
+[06:18:05] [Server thread/INFO]: Time elapsed: 2094 ms
+[06:18:05] [Server thread/INFO]: Done (2.749s)! For help, type "help"
+[06:18:05] [Server thread/INFO]: Starting remote control listener
+[06:18:05] [Server thread/INFO]: Thread RCON Listener started
+[06:18:05] [Server thread/INFO]: RCON running on 0.0.0.0:25575
