@@ -10,7 +10,7 @@ def webhook2():
   webhook_url = os.environ.get('DISCORD_HOOK_URL')
   print(request.json)
   hook = Webhook(webhook_url)
-  hook.send(request.json)
+  hook.send(json.dumps(request.json))
   return Response(status=200)
 
 @app.route('/', methods=['POST'])
