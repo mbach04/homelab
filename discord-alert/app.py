@@ -4,9 +4,13 @@ from dhooks import Webhook
 
 app = Flask(__name__)
 
+
 @app.route('/1050943624021557278', methods=['POST'])
 def webhook2():
+  webhook_url = os.environ.get('DISCORD_HOOK_URL')
   print(request.json)
+  hook = Webhook(webhook_url)
+  hook.send(request.json)
   return Response(status=200)
 
 @app.route('/', methods=['POST'])
