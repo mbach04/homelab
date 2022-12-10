@@ -4,8 +4,14 @@ from dhooks import Webhook
 
 app = Flask(__name__)
 
+@app.route('/1050943624021557278', methods=['POST'])
+def webhook2():
+  print(request.json)
+  return Response(status=200)
+
 @app.route('/', methods=['POST'])
 def webhook():
+  print(request.json)
   # Get the payload from the request
   payload = request.get_json()
   
