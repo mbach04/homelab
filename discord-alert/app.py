@@ -17,6 +17,7 @@ def webhook():
   # Send the response to the Discord webhook
   #requests.post(webhook_url, json=msg)
   hook = Webhook(webhook_url)
+  print(hook)
   hook.send(msg)  
   return "OK"
 
