@@ -4,14 +4,14 @@ import requests
 
 app = Flask(__name__)
 
-@app.route('/webhook', methods=['POST'])
+@app.route('/', methods=['POST'])
 def webhook():
   # Get the payload from the request
   payload = request.get_json()
   
   # Wrap the payload into a JSON object with the "msg" key
   msg = {"content": payload}
-  
+  print(msg) 
   # Set the URL for the Discord webhook
   webhook_url = os.environ.get('DISCORD_HOOK_URL')
   # Send the response to the Discord webhook
