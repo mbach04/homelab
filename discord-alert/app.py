@@ -10,7 +10,7 @@ def webhook():
   payload = request.get_json()
   
   # Wrap the payload into a JSON object with the "msg" key
-  msg = {"content": payload}
+  #msg = {"content": payload}
   print(msg) 
   # Set the URL for the Discord webhook
   webhook_url = os.environ.get('DISCORD_HOOK_URL')
@@ -18,7 +18,7 @@ def webhook():
   #requests.post(webhook_url, json=msg)
   hook = Webhook(webhook_url)
   print(hook)
-  hook.send(msg)  
+  hook.send(payload)  
   return "OK"
 
 if __name__ == '__main__':
