@@ -1,5 +1,5 @@
 import json, os
-from flask import Flask, request
+from flask import Flask, request, Response
 from dhooks import Webhook
 
 app = Flask(__name__)
