@@ -1,4 +1,4 @@
-import json
+import json, os
 from flask import Flask, request
 import requests
 
@@ -13,12 +13,14 @@ def webhook():
   msg = {"content": payload}
   
   # Set the URL for the Discord webhook
-  webhook_url = "https://discord.com/api/webhooks/1050943624021557278/FneLmdPZNeBtmlGmPqF2wJtUzoUBqc6mpXA3P2EsfUYrqaxX4CbEjZOy-Ou1JeVJmRG-"
-  
+  webhook_url = os.environment.get('DISCORD_HOOK_URL')
   # Send the response to the Discord webhook
   requests.post(webhook_url, json=msg)
   
   return "OK"
 
 if __name__ == '__main__':
-  app.run()
+  port = os.environment.get('FLASK_PORT') or 8080
+  port = int(port)
+
+  app.run(port=port,host='0.0.0.0')
