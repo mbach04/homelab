@@ -8,28 +8,14 @@ app = Flask(__name__)
 @app.route('/1050943624021557278', methods=['POST'])
 def webhook2():
   webhook_url = os.environ.get('DISCORD_HOOK_URL')
-  print(request.json)
   hook = Webhook(webhook_url)
-  hook.send(json.dumps(request.json))
+  a = json.dumps(request.json)
+  print("*********raw json received**********")
+  print(request.json)
+  print("**************encoded string************")
+  print(a)
+  hook.send(a)
   return Response(status=200)
-
-@app.route('/', methods=['POST'])
-def webhook():
-  print(request.json)
-  # Get the payload from the request
-  payload = request.get_json()
-  
-  # Wrap the payload into a JSON object with the "msg" key
-  #msg = {"content": payload}
-  print(msg) 
-  # Set the URL for the Discord webhook
-  webhook_url = os.environ.get('DISCORD_HOOK_URL')
-  # Send the response to the Discord webhook
-  #requests.post(webhook_url, json=msg)
-  hook = Webhook(webhook_url)
-  print(hook)
-  hook.send(payload)  
-  return "OK"
 
 if __name__ == '__main__':
   port = os.environ.get('FLASK_PORT') or 8080
