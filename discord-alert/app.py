@@ -24,7 +24,7 @@ def webhook2():
       print(a)
       #hook.send(a)
       print("************** discord format ************")
-      discord_format = {"content": a}
+      discord_format = json.dumps({"content": request.json}, indent=4)
       print(discord_format)
       requests.post(webhook_url, json=json.loads(discord_format))
       return Response(status=200)
