@@ -26,7 +26,7 @@ def webhook2():
       print("************** discord format ************")
       discord_format = {"content": a}
       print(discord_format)
-      requests.post(webhook_url, json=discord_format)
+      requests.post(webhook_url, json=json.loads(discord_format))
       return Response(status=200)
     return Response(status=400)
 
