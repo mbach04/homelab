@@ -1,7 +1,6 @@
 import json, os
 import requests
 from flask import Flask, request, Response
-from dhooks import Webhook
 
 app = Flask(__name__)
 
@@ -20,13 +19,10 @@ def webhook2():
       a = json.dumps(request.json)
       print("********* raw json received **********")
       print(request.json)
-      print("************** encoded string ************")
-      print(a)
-      #hook.send(a)
       print("************** discord format ************")
       discord_format = json.dumps({"content": request.json}, indent=4)
       print(discord_format)
-      requests.post(webhook_url, json=json.loads(discord_format))
+      requests.post(webhook_url, json=discord_format)
       return Response(status=200)
     return Response(status=400)
 
