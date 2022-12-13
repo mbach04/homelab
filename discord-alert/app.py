@@ -24,6 +24,8 @@ def webhook2():
       r = requests.post(webhook_url, json=discord_format)
       if r.ok:
         print("POST returned OK")
+      else:
+        print(r.status_code)
       return Response(status=200)
     return Response(status=400)
 
