@@ -19,7 +19,7 @@ def webhook2():
       print("********* raw json received **********")
       print(request.json)
       print("************** discord format ************")
-      discord_format = json.dumps({"content": json.loads(request.json)}, indent=4)
+      discord_format = json.dumps({"content": json.dumps(request.json)}, indent=4)
       print(discord_format)
       headers = {'Content-type': 'application/json', 'Accept': 'text/plain'}
       r = requests.post(webhook_url, json=discord_format, headers=headers)
