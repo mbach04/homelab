@@ -15,7 +15,6 @@ def webhook2():
     # Get the client's IP address
     if is_proper_ip_subnet(request.remote_addr):
       webhook_url = os.environ.get('DISCORD_HOOK_URL')
-      hook = Webhook(webhook_url)
       a = json.dumps(request.json)
       print("********* raw json received **********")
       print(request.json)
